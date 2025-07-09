@@ -9,6 +9,11 @@ video{
     object-fit: cover;
     z-index:-1;
 }
+#container{
+    width : 100vw;
+    height: 100vh;
+
+}
 #menu {
     position: fixed; 
     top: 0;
@@ -34,4 +39,49 @@ video{
     margin-right: 40px;
     display: inline-block;
     list-style: none;
+}
+a{
+    text-decoration-line: none;
+    color: white;
+}
+html {
+    scroll-behavior: smooth;
+}
+#CN{
+    width: 70px;
+    height:22px;
+    position: absolute;
+    bottom: 8%;
+    left:8%;
+}
+#CN span{
+    margin-right: 7px;
+    font-size: 20px;
+    font-weight: bolder;
+    color : rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+#select{
+    position: absolute;
+    width:40px;
+    height:40px;
+    right:20px;
+    top:16px;
+    cursor: pointer;
+}
+#world{
+    position: absolute;
+    width: 40px;
+    height:40px;
+    top:16px;
+    right:130px;
+}
+#Sworld{
+    position: absolute;
+    top:28px;
+    right:80px;
+    background-color: transparent;
+    color:white;
+    font-weight: bolder;
+    border:0px;
 }
