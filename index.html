@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <div id = "container">
+    <div class = "container">
         <footer id = "menu">
             <img src = "GRID.png" id = "select">
+            <div id = "BoSearch">
+                <input type="text" id="searchInput" placeholder="Search..." />
+                <img src = "search.webp" id = "search">
+            </div>
             <div id = "Langu">
                 <img src = "world.png" id = "world">
                 <select id = "Sworld">
@@ -21,19 +25,39 @@
             <ul id = "menu_id">
                 <li><a href = "about.html">ABOUT</a></li>
                 <li><a href = "products.html">PRODUCTS</a></li>
-                <li><a href = "SS.html">SUSTAINABILITY COMMUNICATIONS</a></li>
+                <li><a href = "SS.html">SUSTAINABILITY</a></li>
+                <li><a href = "Comu.html">COMMUNICATIONS</a></li>
                 <li><a href = "careers.html">CAREERS</a></li>
             </ul>
         </footer>
-        <video autoplay muted loop>
-            <source src="video.mp4" type="video/mp4">
-        </video>
+        <div style = "overflow: hidden">
+            <div class = "VideoContainer">
+                <video autoplay muted loop class = "inner">
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+                <video autoplay muted loop class = "inner">
+                    <source src = "video2.mp4" type = "video/mp4">
+                </video>
+            </div>
+        </div>
     <div id = "CN">
         <span class = "nc1">01</span>
-        <span class = "nc1">02</span>
+        <span class = "nc2">02</span>
     </div>
     </div>
     <script>
+        document.querySelector('.nc1').style.color = 'white';
+        document.querySelector('.nc2').addEventListener('click', function(){
+            document.querySelector('.VideoContainer').style.transform = 'translateX(-100vw)';
+            document.querySelector('.nc2').style.color = 'white';
+            document.querySelector('.nc1').style.color = 'rgba(0,0,0,0.1)';
+            
+        })
+        document.querySelector('.nc1').addEventListener('click', function(){
+            document.querySelector('.VideoContainer').style.transform = 'translateX(0vw)';
+            document.querySelector('.nc1').style.color = 'white';
+            document.querySelector('.nc2').style.color = 'rgba(0,0,0,0.1)';
+        })
     </script>
 </body>
 </html>

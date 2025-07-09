@@ -3,7 +3,6 @@ body{
     padding : 0;
 }
 video{
-    position: fixed;
     width : 100vw;
     height : 100vh;
     object-fit: cover;
@@ -48,6 +47,7 @@ html {
     scroll-behavior: smooth;
 }
 #CN{
+    font-weight: bold;
     width: 70px;
     height:22px;
     position: absolute;
@@ -56,9 +56,8 @@ html {
 }
 #CN span{
     margin-right: 7px;
-    font-size: 20px;
-    font-weight: bolder;
-    color : rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    color : rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
 #select{
@@ -84,4 +83,52 @@ html {
     color:white;
     font-weight: bolder;
     border:0px;
+}
+#BoSearch{
+    position: absolute;
+    border-radius: 100px;
+    top:18px;
+    right : 190px;
+    width: 33px;
+    height: 33px;
+    border:1px solid;
+    border-color: white;
+    display: flex;
+    align-items: center;
+    padding-right: 2.3px;
+    justify-content: flex-end;
+    transition: width 0.3s ease;
+}
+#search{
+    width: 30px;
+    height:30px;
+}
+#BoSearch:hover{
+    width: 200px;
+}
+#searchInput {
+    width: 0;
+    opacity: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+    outline: none;
+    color:black;
+  }
+  #BoSearch:hover #searchInput{
+    width: 130px;
+    opacity: 1;
+}
+.VideoContainer{
+    display: flex;
+    width: 200vw;
+    position: fixed;
+    transition: transform 0.5s;
+    z-index: -1;
+}
+.inner{
+    width:100vw;
+    float:left;
 }
