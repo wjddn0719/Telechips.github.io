@@ -39,24 +39,53 @@
                     <source src = "video2.mp4" type = "video/mp4">
                 </video>
             </div>
+            <div id="Ybox">
+                <a href="https://www.youtube.com/watch?v=cpeb7YWGe3U">
+                  <img src="youtube.png">
+                  <p>2025 Brand PR Film</p>
+                </a>
+              </div>              
         </div>
     <div id = "CN">
         <span class = "nc1">01</span>
         <span class = "nc2">02</span>
     </div>
+    <div id = "scroll" onclick="Scroll_Click()">
+        <img src = "Scroll.png" id = "Sc_ic">
+    </div>
+    </div>
+    <div id = "container1">
+        <h1>All Beginnings Start Here, Telechips</h1>
+        <h2 id = "goo">Where Scalable Technology Meets Sustainable Mobility, Telechips</h2>
+        <h2 id = "ff">Exploring the limitless possibilities of future mobility powered by software,<br>
+            Collaborating with global customers to create innovative value,<br>
+            And embracing continuous change and a spirit of challenge to build a sustainable mobility ecosystem.
+            <br>
+            <br>
+            <br>
+            Telechips' journey toward a scalable and sustainable mobility future continues.
+        </h2>
+    </div>
+    <div id = "container2">
+        
     </div>
     <script>
+        function Scroll_Click(){
+            window.scrollTo({ top:1080, behavior: 'smooth' });
+        }
         document.querySelector('.nc1').style.color = 'white';
         document.querySelector('.nc2').addEventListener('click', function(){
             document.querySelector('.VideoContainer').style.transform = 'translateX(-100vw)';
             document.querySelector('.nc2').style.color = 'white';
             document.querySelector('.nc1').style.color = 'rgba(0,0,0,0.1)';
+            document.querySelector('#Ybox p').textContent = '2024 Brand PR Film';
             
         })
         document.querySelector('.nc1').addEventListener('click', function(){
             document.querySelector('.VideoContainer').style.transform = 'translateX(0vw)';
             document.querySelector('.nc1').style.color = 'white';
             document.querySelector('.nc2').style.color = 'rgba(0,0,0,0.1)';
+            document.querySelector('#Ybox p').textContent = '2025 Brand PR Film';
         })
     </script>
 </body>

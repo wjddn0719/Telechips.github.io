@@ -10,7 +10,6 @@ video{
 }
 #container{
     width : 100vw;
-    height: 100vh;
 
 }
 #menu {
@@ -57,7 +56,7 @@ html {
 #CN span{
     margin-right: 7px;
     font-size: 18px;
-    color : rgba(0, 0, 0, 0.5);
+    color : rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 #select{
@@ -124,11 +123,98 @@ html {
 .VideoContainer{
     display: flex;
     width: 200vw;
-    position: fixed;
+    position: absolute;
     transition: transform 0.5s;
     z-index: -1;
 }
 .inner{
     width:100vw;
     float:left;
+}
+#Ybox{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 200px;
+    height:50px;
+    background-color: white;
+    border-radius: 25px;
+    right:100px;
+    bottom:50px;
+    z-index: 1;
+}
+#Ybox img{
+    position: absolute;
+    left:20px;
+    width: 28px;
+    height: 28px;
+}
+#Ybox p{
+    position: absolute;
+    font-size: 15px;
+    top:2px;
+    right:18px;
+    font-weight: 600;
+    z-index: 2;
+}
+#Ybox a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black; /* 필요하면 white로 */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+  }
+#Ybox:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+}
+#container1 {
+    width:100vw;
+    height: 1470px;
+    margin-top: 100vh;
+    padding: 30px 0;
+    text-align: center;
+    background-color: white;
+}
+
+#container1 h1 {
+    font-size: 55px;
+    font-weight: 700; 
+    color: #222222;    
+}
+#goo {
+    font-size: 35px;
+    font-weight: 400; 
+}
+#ff{
+    font-size: 25px;
+    font-weight: 300;
+}
+html {
+    scroll-behavior: smooth;
+}
+#scroll{
+    position: absolute;
+    border-radius: 25px;
+    width: 52px;
+    height: 52px;
+    border: 1px solid;
+    border-color: white;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:10%;
+}
+#Sc_ic{
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width:60px;
+    height:60px;
+}
+#scroll:hover{
+    cursor: pointer;
 }
