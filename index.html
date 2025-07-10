@@ -55,24 +55,31 @@
     </div>
     </div>
     <div id = "container1">
-        <h1>All Beginnings Start Here, Telechips</h1>
-        <h2 id = "goo">Where Scalable Technology Meets Sustainable Mobility, Telechips</h2>
-        <h2 id = "ff">Exploring the limitless possibilities of future mobility powered by software,<br>
-            Collaborating with global customers to create innovative value,<br>
-            And embracing continuous change and a spirit of challenge to build a sustainable mobility ecosystem.
+        <h1>모든 것의 시작, 텔레칩스</h1>
+        <h2 id = "goo">우리는 단순한 반도체 팹리스 기업을 넘어<br>
+            <span>모빌리티 SoC 솔루션 브랜드</span>로 새로운 길을 열어갑니다.</h2>
+        <h2 id = "ff">소프트웨어로 움직이는 미래 모빌리티의 <span>무한한 가능성</span>을 탐구하고,<br>
+            글로벌 고객과 함께 <span>혁신적인 가치</span>를 창출하기 위해 고민하며,<br>
+            끊임없는 변화와 도전 정신으로 <span>지속 가능한 모빌리티 라이프</span>를 제시하는 기업.
             <br>
             <br>
-            <br>
-            Telechips' journey toward a scalable and sustainable mobility future continues.
+            모두를 위한 모빌리티 라이프를 향한 텔레칩스의 여정은 계속됩니다.
         </h2>
     </div>
     <div id = "container2">
-        
+        <h1>핵심사업영역</h1>
+        <div class = "BS">
+            
+        </div>
     </div>
     <script>
         function Scroll_Click(){
-            window.scrollTo({ top:1080, behavior: 'smooth' });
+            window.scrollTo({ top:700, behavior: 'smooth' });
         }
+        onscroll = () => {
+        document.getElementById('menu').style.top = window.scrollY > 50 ? '-80px' : '0';
+        };
+
         document.querySelector('.nc1').style.color = 'white';
         document.querySelector('.nc2').addEventListener('click', function(){
             document.querySelector('.VideoContainer').style.transform = 'translateX(-100vw)';
@@ -87,6 +94,7 @@
             document.querySelector('.nc2').style.color = 'rgba(0,0,0,0.1)';
             document.querySelector('#Ybox p').textContent = '2025 Brand PR Film';
         })
+        
     </script>
 </body>
 </html>

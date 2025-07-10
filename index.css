@@ -21,6 +21,7 @@ video{
     color: white;
     text-align: center;
     border-bottom: 0.1px solid;
+    transition: top 0.3s;
   }
 #name{
     position:absolute;
@@ -173,7 +174,7 @@ html {
 }
 #container1 {
     width:100vw;
-    height: 1470px;
+    height: 450px;
     margin-top: 100vh;
     padding: 30px 0;
     text-align: center;
@@ -181,8 +182,8 @@ html {
 }
 
 #container1 h1 {
-    font-size: 55px;
-    font-weight: 700; 
+    font-size: 60px;
+    font-weight: 500; 
     color: #222222;    
 }
 #goo {
@@ -191,7 +192,7 @@ html {
 }
 #ff{
     font-size: 25px;
-    font-weight: 300;
+    font-weight: 400;
 }
 html {
     scroll-behavior: smooth;
@@ -217,4 +218,30 @@ html {
 }
 #scroll:hover{
     cursor: pointer;
+}
+#container2 h1{
+    position: absolute;
+    left:100px;
+    font-size: 45px;
+    font-weight: 600; 
+    color: #222222; 
+}
+#container2{
+    width:100vw;
+}
+#goo span{
+    color:rgba(59, 59, 170, 0.914);
+    font-weight: 600;
+}
+#ff span{
+    font-weight: 600;
+}
+.BS{
+    position: absolute;
+    margin-top: 150px;
+    width:300px;
+    height: 500px;
+    border:1px solid;
+    margin-left: 100px;
+    border-radius: 25px;
 }
