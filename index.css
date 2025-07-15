@@ -440,7 +440,7 @@ hr{
     margin-left: 30px;
     width:450px;
     height:400px;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 35px;
 }
 #q{
@@ -530,4 +530,25 @@ hr{
     right: 20px;
     font-size: 13px;
     color: #ccc;
+}
+.q_card img{
+    margin-left:20px;
+    margin-top:20px;
+}
+.q_card h1{
+    font-size: 20px;
+}
+.q_card img{
+    position: relative;
+    width:250px;
+    left:-10px;
+    top:-190px;
+}
+.text1{
+    width:200px;
+}
+#volk{
+    position: absolute;
+    top:-130px;
+    width:400px;
 }
