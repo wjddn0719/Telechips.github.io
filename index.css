@@ -552,3 +552,191 @@ hr{
     top:-130px;
     width:400px;
 }
+#searchOverlay {
+    position: fixed;
+    top: -400px;
+    left: 0;
+    width: 100vw;
+    background: white;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 9999;
+    transition: top 0.4s ease;
+    padding: 40px 0 50px 0;
+  }
+  
+  .searchContainer {
+    width: 900px;
+    margin: 0 auto;
+  }
+  
+  .searchInputBox {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .searchInputBox input {
+    width: 100%;
+    padding: 15px 60px 15px 20px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    outline: none;
+  }
+  
+  .searchIcon {
+    position: absolute;
+    right: 50px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+  }
+  
+  #closeSearch {
+    position: absolute;
+    right: 10px;
+    background: none;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .popularSearches {
+    margin-top: 30px;
+  }
+  
+  .popularSearches p {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .popularSearches span {
+    color: gray;
+    font-size: 12px;
+    margin-left: 8px;
+  }
+  
+  .keywordLists {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+  }
+  
+  .keywordLists ol {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .keywordLists li {
+    padding: 3px 0;
+    color: #111;
+    cursor: pointer;
+  }
+  .q_card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .q_card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #container1 {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  #container1.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .card {
+    flex: 1;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 30px 30px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: left;
+    color: white;
+  
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out,
+      flex 0.8s ease;
+  }
+  
+  .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card:hover {
+    flex: 2.5;
+  }
+  
+  .card:not(:hover) {
+    flex: 1.2;
+  }
+  .environment {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .environment.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* 글자 초기 상태 */
+.container4 h1,
+.container4 h2,
+.container4 p {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 애니메이션 완료 상태 */
+.container4 h1.visible,
+.container4 h2.visible,
+.container4 p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.environment {
+    position: relative;
+    width: 290px;
+    height: 300px;
+    border-radius: 25px;
+    border: 3px solid white;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 가로 중앙 정렬 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    text-align: center;     /* 텍스트 중앙 정렬 */
+  }
+  
+  .environment h1 {
+    position: static;  /* 기존 absolute 제거 */
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .environment img {
+    position: static;  /* 기존 absolute 제거 */
+    margin-left: 120px;
+    width: 120px;
+    height: 100px;
+  }
+  

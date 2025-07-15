@@ -7,6 +7,60 @@
     <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+    <!-- GRID 버튼 -->
+<img src="GRID.png" id="select" style="cursor:pointer;">
+
+<!-- 드롭다운 메뉴 (초기에는 숨김) -->
+<div id="gridDropdown" style="display:none; position: fixed; top: 73px; right: 20px; width: 300px; background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; padding: 20px;">
+  <ul style="list-style:none; padding:0; margin:0; color:black; font-weight:bold; font-size:18px;">
+    <li style="padding: 8px 0; border-bottom: 1px solid #ddd;">회사 소개</li>
+    <li style="padding: 8px 0; border-bottom: 1px solid #ddd;">제품</li>
+    <li style="padding: 8px 0; border-bottom: 1px solid #ddd;">뉴스</li>
+    <li style="padding: 8px 0;">문의하기</li>
+  </ul>
+
+  <div style="margin-top:20px; border-top: 1px solid #ddd; padding-top: 15px;">
+    <strong>What's New</strong>
+    <div style="margin-top: 10px; display: flex; gap: 10px;">
+      <div style="flex:1; background:#f5f5f5; padding:10px; border-radius: 8px;">
+        <p style="font-weight:600; margin:0 0 5px 0;">뉴스 제목 1</p>
+        <small style="color:#666;">2025-07-01</small>
+      </div>
+      <div style="flex:1; background:#f5f5f5; padding:10px; border-radius: 8px;">
+        <p style="font-weight:600; margin:0 0 5px 0;">뉴스 제목 2</p>
+        <small style="color:#666;">2025-06-15</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="searchOverlay">
+    <div class="searchContainer">
+      <div class="searchInputBox">
+        <input type="text" placeholder="Search" />
+        <img src="search.webp" class="searchIcon" />
+        <button id="closeSearch">×</button>
+      </div>
+      <div class="popularSearches">
+        <p>인기 검색어 <span>2025-7-16 기준</span></p>
+        <div class="keywordLists">
+          <ol>
+            <li>1 TCC807X (DOLPHIN3)</li>
+            <li>2 TCC805X (DOLPHIN3)</li>
+            <li>3 TCC803X (DOLPHIN+)</li>
+            <li>4 TCC750X (N-DOLPHIN)</li>
+          </ol>
+          <ol>
+            <li>5 TBD (A2X)</li>
+            <li>6 TCC71XX (VCP3)</li>
+            <li>7 TCC700X (VCP)</li>
+            <li>8 TBD (AXON)</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  
     <div class = "container">
         <footer id = "menu">
             <img src = "GRID.Png" id = "select">
@@ -30,6 +84,7 @@
                 <li><a href = "careers.html">CAREERS</a></li>
             </ul>
         </footer>
+        
         <div style = "overflow: hidden">
             <div class = "VideoContainer">
                 <video autoplay muted loop class = "inner">
@@ -215,28 +270,147 @@
         </div>
     </div>
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.q_card');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // 한 번만 실행
+      }
+    });
+  }, { threshold: 0.2 }); // 20% 보일 때 실행
+
+  cards.forEach(card => {
+    observer.observe(card);
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  // 기존 q_card observer 코드 위에 추가
+  const container1 = document.getElementById('container1');
+
+  const observerContainer1 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observerContainer1.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observerContainer1.observe(container1);
+
+  // 기존 q_card observer 코드도 같이
+  const cards = document.querySelectorAll('.q_card');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => {
+    observer.observe(card);
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.card');
+  
+  const observerCards = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const index = Array.from(cards).indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 200); // 0.2초 간격 딜레이
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  cards.forEach(card => {
+    observerCards.observe(card);
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  // 기존 .card 애니메이션 코드 유지
+
+  // 지속가능경영 환경 박스
+  const envBoxes = document.querySelectorAll('.environment');
+
+  const observerEnv = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const index = Array.from(envBoxes).indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 200);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  envBoxes.forEach(box => observerEnv.observe(box));
+});
+
         function Scroll_Click(){
             window.scrollTo({ top:750, behavior: 'smooth' });
         }
+    
         onscroll = () => {
-        document.getElementById('menu').style.top = window.scrollY > 50 ? '-80px' : '0';
+            document.getElementById('menu').style.top = window.scrollY > 50 ? '-80px' : '0';
         };
-
+    
         document.querySelector('.nc1').style.color = 'white';
         document.querySelector('.nc2').addEventListener('click', function(){
             document.querySelector('.VideoContainer').style.transform = 'translateX(-100vw)';
             document.querySelector('.nc2').style.color = 'white';
             document.querySelector('.nc1').style.color = 'rgba(0,0,0,0.1)';
             document.querySelector('#Ybox p').textContent = '2024 Brand PR Film';
-            
-        })
+        });
+    
         document.querySelector('.nc1').addEventListener('click', function(){
             document.querySelector('.VideoContainer').style.transform = 'translateX(0vw)';
             document.querySelector('.nc1').style.color = 'white';
             document.querySelector('.nc2').style.color = 'rgba(0,0,0,0.1)';
             document.querySelector('#Ybox p').textContent = '2025 Brand PR Film';
-        })
-        
+        });
+    
+        // ✅ 검색창 열기
+        document.getElementById('BoSearch').addEventListener('click', () => {
+            document.getElementById('searchOverlay').style.top = '0';
+        });
+    
+        // ✅ 검색창 닫기
+        document.getElementById('closeSearch').addEventListener('click', () => {
+            document.getElementById('searchOverlay').style.top = '-400px';
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+  // 기존 카드, 환경박스 옵저버 유지
+
+  // 지속가능경영 글자들
+  const texts = document.querySelectorAll('.container4 h1, .container4 h2, .container4 p');
+
+  const observerText = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const index = Array.from(texts).indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 200);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  texts.forEach(text => observerText.observe(text));
+});
+
     </script>
+    
 </body>
 </html>
